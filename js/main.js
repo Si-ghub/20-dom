@@ -123,6 +123,7 @@ hamburgerDOM.addEventListener('click', () => {
 
 //  SPRENDIMAS //
 
+/*
 let rezultatas = 0;
 const minusDOM = document.querySelector('.minus');
 const plusDOM = document.querySelector('.plus');
@@ -157,9 +158,24 @@ resetDOM.addEventListener('click', () => {
     h1DOM.innerText = initialH1Text;                       //g.b stringas 'Te prasideda žaidynės!'
     ulDOM.innerHTML += `<li>Paspaudei reset ir dabartinis rezultatas yra ${rezultatas}.</li>`
 })
+*/
 
+/* //10 UZDUOTIS
+1. Formoje parasytas tekstas, po submit mygtuko paspaudimo turi buti atvaizduotas <span> elemente.
 
+2. input elemento reiksme istraukia kreipiantis i to elemento value parametra, pvz.: element.value
 
+*/
+
+const buttonDOM = document.querySelector('button');
+const inputDOM = document.querySelector('input');
+const spanDOM = document.querySelector('span');
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();
+    spanDOM.innerText = inputDOM.value;
+    inputDOM.value = '';
+})
 
 
 
