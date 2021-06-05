@@ -179,4 +179,40 @@ buttonDOM.addEventListener('click', (event) => {
 })
 */
 
+/*//11 UZDUOTIS
+1. Zinutes ivesties lauko teksto spalva turi buti raudona(tai realizuoti su JS, bet ne per CSS).
+
+2. Formoje parasyta teksto zinute, po submit mygtuko paspaudimo turi buti atvaizduotas < span > elemente.
+
+3. Spalvoms skirti laukai turi tureti nurodyta atitinkama tipa(zr.dokumentacija).
+
+4. Taip pat, tam < span > elementui turi buti priskirtos fono ir teksto spalvos is atitinkamu formos lauku.
+
+5. input elemento reiksme istraukia kreipiantis i to elemento value parametra, pvz.: element.value
+
+6. Norint elementui priskirti papildoma stiliu, reikia rasyti, pvz.: element.style.backgroundColor = "red"
+
+7. Po ivesto teksto nuskaitymo, isvalyti ivesties lauka input
+
+*/
+
+// SPRENDIMAS
+
+const buttonDOM = document.querySelector('button');
+const messageinputDOM = document.querySelector('input');
+const spanDOM = document.querySelector('span');
+const bgInputColor = document.querySelector('#bg-color');
+const textInputColor = document.querySelector('#text-color');
+
+inputDOM.style.color = 'red';
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();                          // budas isvengti submit 
+    spanDOM.innerText = messageinputDOM.value;
+    messageinputDOM.value = '';
+    spanDOM.style.backgroundColor = bgInputColor.value;
+    spanDOM.style.color = textInputColor.value;
+
+});
+
 

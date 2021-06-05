@@ -79,6 +79,7 @@ ul {
 }
 */
 
+/*
 body {
   display: flex;
   padding: 100px 0;
@@ -96,6 +97,41 @@ button {
   line-height: 40px;
 }
 
+span {
+  padding: 0 20px;
+  border: 1px dotted red;
+}
+*/
+body {
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input,
+button {
+  padding: 0 20px;
+  font-size: 30px;
+  line-height: 40px;
+}
+input[type='color'] {
+  width: 100px;
+  height: 50px;
+  padding: 0;
+}
 span {
   padding: 0 20px;
   border: 1px dotted red;
