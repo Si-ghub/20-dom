@@ -184,6 +184,8 @@ buttonDOM.addEventListener('click', (event) => {
 11 Sprendimas
 
 ```js
+// document.querySelector('#id ir for','.class', 'tag') kaip randame tam tikro tipo selektoriu
+
 const buttonDOM = document.querySelector('button');
 const messageinputDOM = document.querySelector('input');
 const spanDOM = document.querySelector('span');

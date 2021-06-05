@@ -3,7 +3,7 @@ const klientasDOM = document.querySelector('#customer');
 const sriubaDOM = document.querySelector('#sriuba');
 const pgrPatiekalasDOM = document.querySelector('#patiekalas');
 const desertasDOM = document.querySelector('#desertas');
-const gerimaiDOM = document.querySelectorAll('drinks');
+const gerimaiDOM = document.querySelectorAll('.drinks');
 
 const uzsakytiDOM = document.querySelector('button');
 const uzsakymasDOM = document.querySelector('.order');
@@ -11,18 +11,18 @@ const uzsakymasDOM = document.querySelector('.order');
 uzsakytiDOM.addEventListener('click', (event) => {
     event.preventDefault();
 
-    function pasirinktiMaista(patiekalas) {
-        if (patiekalas) {
+    function pasirinktiMaista(item) {
+        if (item.checked) {
             return 'nori';
         }
         return 'nenori';
     }
 
-    function pasirinktiGerima(gerimas) {
-        for (let i = 0; i < gerimas.length; i++) {
-            let gerimoPavadinimas = ''
-            if (gerimas[i].pasirinkta === true) {
-                return gerimoPavadinimas = `${gerimas[i].value}`;
+    function pasirinktiGerima(item) {
+        let gerimas = '';
+        for (let i = 0; i < item.length; i++) {
+            if (item[i].checked === true) {
+                return gerimas = item[i].value;
             }
         }
 
