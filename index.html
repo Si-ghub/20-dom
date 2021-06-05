@@ -11,50 +11,50 @@
 </head>
 
 <body>
+    <h1>Programuotoju uzeigele</h1>
     <form>
         <div class="form-row">
-            <label for="message">Tavo zinutes tekstas</label>
-            <input id="message" type="text" />
+            <label for="customer">Kliento vardas</label>
+            <input id="customer" type="text">
         </div>
         <div class="form-row">
-            <label for="bg-color">Fono spalva</label>
-            <input id="bg-color" type="color" value=#ff0000 />
+            <div class="inline">
+                <input id="sriuba" value="Sriuba" type="checkbox">
+                <label for="sriuba">Sriuba</label>
+            </div>
         </div>
         <div class="form-row">
-            <label for="text-color">Teksto spalva</label>
-            <input id="text-color" type="color" value=#ff0000 />
+            <div class="inline">
+                <input id="patiekalas" value="Pagrindinis patiekalas" type="checkbox">
+                <label for="patiekalas">Pagrindinis patiekalas</label>
+            </div>
         </div>
-        <button type="submit">Submit</button>
+        <div class="form-row">
+            <div class="inline">
+                <input id="desertas" value="Desertas" type="checkbox">
+                <label for="desertas">Desertas</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <label>Gerimas</label>
+            <div class="inline">
+                <input type="radio" id="sultys" name="drinks" value="sultys">
+                <label for="sultys">Sultys</label>
+            </div>
+            <div class="inline">
+                <input type="radio" id="gira" name="drinks" value="gira">
+                <label for="gira">Gira</label>
+            </div>
+            <div class="inline">
+                <input type="radio" id="pienas" name="drinks" value="pienas">
+                <label for="pienas">Pienas</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="submit">Uzsakyti</button>
+        </div>
     </form>
-    <div>Tu parasei: <span></span></div>
-
-
-    <!-- <h1>Show must go on!</h1>
-    <form>
-        <button class="reset" type="button">Reset</button>
-        <button class="minus" type="button">-</button>
-        <div class="number">0</div>
-        <button class="plus" type="button">+</button>
-    </form>
-    <ul>
-        cia turi buti sukurti <li> elementai, atitinkamai zaidimo eigai
-        <li>Test</li>
-    </ul> -->
-
-    <!-- <header>
-        <img class="logo" src="#" alt="Logo">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
-        </nav>
-        <div class="hamburger">🍔</div>
-    </header> -->
-
-    <!-- <h1>Labas</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
-    <a href="#">Click me!</a> -->
+    <div class="order">Uzsakymas...</div>
 
     <script src="./js/main.js" type="module" defer></script>
 </body>
