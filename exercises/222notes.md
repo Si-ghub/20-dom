@@ -184,7 +184,7 @@ buttonDOM.addEventListener('click', (event) => {
 11 Sprendimas
 
 ```js
-// document.querySelector('#id ir for','.class', 'tag') kaip randame tam tikro tipo selektoriu
+// document.querySelector('#id ir for','.class', 'tag') kaip randame tam tikro tipo selektoriu, priekyje ju naudojami skirtingi simboliai
 
 const buttonDOM = document.querySelector('button');
 const messageinputDOM = document.querySelector('input');
@@ -196,7 +196,7 @@ inputDOM.style.color = 'red';
 
 buttonDOM.addEventListener('click', (event) => {
   //ivykio tipas
-  event.preventDefault(); // budas isvengti submit
+  event.preventDefault(); // budas isvengti submit refresh, by default buna
   spanDOM.innerText = messageinputDOM.value;
   messageinputDOM.value = '';
   spanDOM.style.backgroundColor = bgInputColor.value;

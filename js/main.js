@@ -18,6 +18,8 @@ uzsakytiDOM.addEventListener('click', (event) => {
         return 'nenori';
     }
 
+    //const pasirinktiMaista = item => item.checked ? 'nori' : 'nenori';
+
     function pasirinktiGerima(item) {
         let gerimas = '';
         for (let i = 0; i < item.length; i++) {
