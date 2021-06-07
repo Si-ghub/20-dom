@@ -1,6 +1,6 @@
 
-const klientasDOM = document.querySelector('#customer');
-const sriubaDOM = document.querySelector('#sriuba');
+const klientasDOM = document.querySelector('#customer');   //ID #customer
+const sriubaDOM = document.querySelector('#sriuba');  //for #sriuba
 const pgrPatiekalasDOM = document.querySelector('#patiekalas');
 const desertasDOM = document.querySelector('#desertas');
 const gerimaiDOM = document.querySelectorAll('.drinks');
@@ -18,7 +18,7 @@ uzsakytiDOM.addEventListener('click', (event) => {
         return 'nenori';
     }
 
-    //const pasirinktiMaista = item => item.checked ? 'nori' : 'nenori';
+    //const pasirinktiMaista = item => item.checked ? 'nori' : 'nenori';       << trumpesnis budas >>
 
     function pasirinktiGerima(item) {
         let gerimas = '';
