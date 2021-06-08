@@ -1,35 +1,57 @@
+// 1. Kiekviena komanda turi savo atskiras formas, kuriu deka yra registruojami pelnyti taskai
 
-const klientasDOM = document.querySelector('#customer');   //ID #customer
-const sriubaDOM = document.querySelector('#sriuba');  //for #sriuba
-const pgrPatiekalasDOM = document.querySelector('#patiekalas');
-const desertasDOM = document.querySelector('#desertas');
-const gerimaiDOM = document.querySelectorAll('.drinks');
+// 2. Kiekviena karta pelnius tasku, tai turi atsispindeti lentoje
 
-const uzsakytiDOM = document.querySelector('button');
-const uzsakymasDOM = document.querySelector('.order');
 
-uzsakytiDOM.addEventListener('click', (event) => {
-    event.preventDefault();
+const aiksteleDOM = document.querySelector('.aikstele');
+const lentaDOM = document.querySelector('.lenta');
+const namuRezultatasDOM = lentaDOM.querySelector('[data-komanda="namu"]');
+const sveciuRezultatasDOM = lentaDOM.querySelector('[data-komanda="sveciu"]');
 
-    function pasirinktiMaista(item) {
-        if (item.checked) {
-            return 'nori';
-        }
-        return 'nenori';
-    }
+const namuKomandaDOM = aiksteleDOM.querySelector('[data-komanda="namu"]');
+const taskaiNamuDOM = namuKomandaDOM.querySelectorAll('button');
 
-    //const pasirinktiMaista = item => item.checked ? 'nori' : 'nenori';       << trumpesnis budas >>
+const sveciuKomandaDOM = aiksteleDOM.querySelector('[data-komanda="sveciu"]');
+const taskaiSveciuDOM = sveciuKomandaDOM.querySelectorAll('button');
 
-    function pasirinktiGerima(item) {
-        let gerimas = '';
-        for (let i = 0; i < item.length; i++) {
-            if (item[i].checked === true) {
-                return gerimas = item[i].value;
-            }
-        }
+// 1 sprendimo budas
 
-    }
+// let - kintamojo iniciavimo budas
+let namuKomandosTaskai = 0;
+for (let i = 0; i < taskaiNamuDOM.length; i++) {
+    const mygtukas = taskaiNamuDOM[i];
+    mygtukas.addEventListener('click', () => {
+        namuKomandosTaskai += i + 1;
+        namuRezultatasDOM.innerText = namuKomandosTaskai;
 
-    uzsakymasDOM.innerText = `Uzsakovas vardu ${klientasDOM.value}, ${pasirinktiMaista(sriubaDOM)} sriubos, ${pasirinktiMaista(pgrPatiekalasDOM)} pagrindinio patiekalo, ${pasirinktiMaista(desertasDOM)} deserto ir ${pasirinktiGerima(gerimaiDOM)} yra pasirinktas gerimas.`
+    });
+}
 
-});
+let sveciuKomandosTaskai = 0;
+
+for (let i = 0; i < taskaiSveciuDOM.length; i++) {
+    const mygtukas = taskaiSveciuDOM[i];
+    mygtukas.addEventListener('click', () => {
+        sveciuKomandosTaskai += i + 1;
+        sveciuRezultatasDOM.innerText = sveciuKomandosTaskai;
+
+    });
+}
+
+// 2 sprendimo budas
+let namuRezultatas = 0;
+let sveciuRezultatas = 0;
+
+for (let i = 0; i < 3; i++) {
+    taskaiNamuDOM[i].addEventListener('click', () => {
+        namuRezultatas += i + 1;
+        namuRezultatasDOM.innerText = namuRezultatas;
+    })
+
+    taskaiSveciuDOM[i].addEventListener('click', () => {
+        sveciuRezultatas += i + 1;
+        sveciuRezultatasDOM.innerText = sveciuRezultatas;
+    })
+}
+
+
