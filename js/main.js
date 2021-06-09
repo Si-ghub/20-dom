@@ -1,8 +1,26 @@
-function generuotiSocials() {
+function renderNav() {
 
 }
 
-const icons = ['facebook', 'twitter', 'linkedin'];
+const menu = [
+    {
+        href: '#',
+        title: 'Home'
+    },
+    {
+        href: '#',
+        title: 'Services'
+    },
+    {
+        href: '#',
+        title: 'About us'
+    },
+    {
+        href: '#',
+        title: 'Contact us'
+    }
+];
 
-generuotiSocials('.socials', icons)
+renderNav('header', menu);
+
 
