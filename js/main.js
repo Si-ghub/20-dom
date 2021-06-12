@@ -1,60 +1,22 @@
-// https://www.w3schools.com/tags/tag_select.asp
-
-function renderSelect(selector, dataList, id) {
-    // susirandame vieta, kur zemiau kurio elemento tures nugulti naujas turinys
-    const DOM = document.querySelector(selector);
-
-    // susigeneruojame visus galimus select pasirinkimus
-    let optionsHTML = '';
-    for (const dataItem of dataList) {
-        optionsHTML += `<option value="${dataItem}">${dataItem}</option>`;
-    }
-
-    // sukonstruojame galutini select elementa ir istatome i reikiama vieta
-    const HTML = `<select id="${id}">${optionsHTML}</select>`;
-    DOM.insertAdjacentHTML('afterend', HTML);
-}
-
-const animals = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
-renderSelect('label[for="animal"]', animals, 'animal');
-
-const vegetables = ['morka', 'svogunas', 'bulve'];
-renderSelect('label[for="vegetable"]', vegetables, 'vegetable');
-
-const allSelectDOM = document.querySelectorAll('select');
-
-const buttonDOM = document.querySelector('button');
 const optionDOM = document.querySelector('.option');
+const buttonDOM = document.querySelector('button');
+const inputDOM = document.getElementById('board');
+const boardDOM = document.querySelector('.board');
 
-buttonDOM.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    const pasirinkimai = Array.from(allSelectDOM).map(DOM => DOM.value);
-
-    const pasirinkimuZinute = pasirinkimai.join(', ');
-    optionDOM.innerText = pasirinkimuZinute;
+buttonDOM.addEventListener('click', (e) => {
+    e.preventDefault();
+    const n = parseInt(inputDOM.value);
+    optionDOM.textContent = `${n}x${n}`;
+    renderBoard(boardDOM, n);
 })
 
+function renderBoard(DOMelement, size) {
+    const rowHeight = 100 / size;
+    let HTML = '';
 
+    for (let i = 0; i < size; i++) {
+        HTML += `<div class="row" style="height: ${rowHeight}%;"></div>`;
+    }
 
-
-
-// function favoriteAnimal(selector, list) {
-//     const DOM = document.querySelector(selector);
-//     const optionDOM = document.querySelector('.option');
-//     const buttonDOM = document.querySelector('.button');
-
-//     buttonDOM.addEventListener('click', (event) => {
-//         event.preventDefault();
-//     })
-//     let HTML = '';
-//     for (let i = 0; i < list.length; i++) {
-//         const animal = list[i];
-//         HTML += `<option value="${animal}">${animal}</option>`;
-//     }
-//     DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
-
-// }
-// const animalList = ['Zuikis', 'Barsukas', 'Lape', 'Vilkas'];
-// favoriteAnimal('label', animalList);
-
+    DOMelement.innerHTML = HTML;
+}
