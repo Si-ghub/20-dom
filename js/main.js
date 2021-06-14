@@ -8,14 +8,19 @@ buttonDOM.addEventListener('click', (e) => {
     const n = parseInt(inputDOM.value);
     optionDOM.textContent = `${n}x${n}`;
     renderBoard(boardDOM, n);
-})
+});
 
 function renderBoard(DOMelement, size) {
-    const rowHeight = 100 / size;
+    const elementSize = 100 / size;
+    let cellHTML = '';
     let HTML = '';
 
-    for (let i = 0; i < size; i++) {
-        HTML += `<div class="row" style="height: ${rowHeight}%;"></div>`;
+    for (let c = 0; c < size; c++) {
+        cellHTML += `<div class="cell" style="width: ${elementSize}%;"></div>`;
+    }
+
+    for (let r = 0; r < size; r++) {
+        HTML += `<div class="row" style="height: ${elementSize}%;">${cellHTML}</div>`;
     }
 
     DOMelement.innerHTML = HTML;
