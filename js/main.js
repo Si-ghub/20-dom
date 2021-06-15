@@ -1,24 +1,10 @@
-function time(nuo, iki, intervalas) {
-
-}
-time(1, 4, 31);
-
-
-
-
-/*
-let times = []
-    , hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-    , prop = null
-    , hour = null
-    , min = null;
-
-for (hour in hours) {
-    for (min = 0; min < 60; min += 15) {
-        times.push(hours[hour].slice(-2)) + ':' + (min.slice(-2));
-
+function time(nuo, iki, trukme) {
+    for (let i = nuo * 60; i <= iki * 60; i += trukme) {
+        const h = Math.floor(i / 60);
+        const m = i - h * 60;
+        console.log(`${h}:${m < 10 ? '0' + m : m}`);
     }
-
 }
-console.log(times);
-*/
+
+time(8, 11, 45);
+
